@@ -21,12 +21,12 @@ npm run init -- --target_os=android --target_arch=arm
 #waiting for sync chromium project.very long time depends on your internet speed.
 
 npm run build gen_gradle
-
+#very long time depends on your CPU and memory.
 # after buid, 
 cd  cd ../out/android_gen_gradle_arm/apks/
 # install apk to your android device
 adb install ChromePublic.apk
-#very long time depends on your CPU and memory.
+
 
 ```
 
