@@ -1,4 +1,4 @@
-/* Copyright (c) 2023 The Brave Authors. All rights reserved.
+/* Copyright (c) 2023 The Hayek Authors. All rights reserved.
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at https://mozilla.org/MPL/2.0/. */
@@ -9,7 +9,7 @@ provideStrings({
   summarizeFailedLabel: 'The summarizer feature is currently available only for select articles and other long-form web pages.',
   placeholderLabel: 'Enter a prompt here',
   aboutTitle: 'About Leo',
-  aboutDescription: 'Brave Leo is an AI smart assistant that can summarize web pages, transcribe videos, and answer questions. Brave Leo Premium uses advanced $1AI models$2 for even more nuanced replies, and gives early access to new features.',
+  aboutDescription: 'Hayek Leo is an AI smart assistant that can summarize web pages, transcribe videos, and answer questions. Hayek Leo Premium uses advanced $1AI models$2 for even more nuanced replies, and gives early access to new features.',
   aboutDescription_2: `The accuracy of responses is not guaranteed, and may include inaccurate, misleading, or false information. Don't submit sensitive or private info, and use caution with any answers related to health, finance, personal safety, or similar.`,
   aboutDescription_3: 'Leo does not collect or otherwise process identifiers such as IP Address that can be linked to you. No personal data is retained by the AI model or any 3rd-party model providers.',
   acceptButtonLabel: 'Accept and begin',
@@ -44,7 +44,7 @@ provideStrings({
   copyButtonLabel: 'Copy',
   likeAnswerButtonLabel: 'Like answer',
   dislikeAnswerButtonLabel: 'Dislike answer',
-  provideFeedbackTitle: 'Provide Brave AI Feedback',
+  provideFeedbackTitle: 'Provide Hayek AI Feedback',
   selectFeedbackTopic: 'Select your feedback topic',
   feedbackCategoryLabel: 'Whats your feedback about?',
   feedbackDescriptionLabel: 'Provide feedback here',
@@ -57,7 +57,7 @@ provideStrings({
   optionOther: 'Other',
   ratingError: 'Your rating could not be submitted, please check network connection and try again',
   feedbackError: 'Your feedback could not be submitted, please check network connection and try again',
-  premiumRefreshWarningDescription: 'Your Brave account session has expired. Please visit your account page to refresh, then come back to use premium features.',
+  premiumRefreshWarningDescription: 'Your Hayek account session has expired. Please visit your account page to refresh, then come back to use premium features.',
   premiumRefreshWarningAction: 'Refresh',
   clearChatButtonLabel: 'Clear chat',
   errorContextLimitReaching: 'This conversation is long and Leo may start forgetting things soon. You can get longer conversations by switching to a premium model, or you can clear the chat to reset it',
@@ -70,7 +70,7 @@ provideStrings({
   leoSettingsTooltipLabel: 'Leo settings',
   summarizePageButtonLabel: 'Summarize this page',
   welcomeGuideTitle: 'Hi, I\'m Leo!',
-  welcomeGuideSubtitle: 'An AI-powered intelligent assistant, built right into Brave',
+  welcomeGuideSubtitle: 'An AI-powered intelligent assistant, built right into Hayek',
   welcomeGuideSiteHelpCardTitle: 'Need help with a website?',
   welcomeGuideSiteHelpCardDesc: 'I can help you summarizing articles, expanding on a site\'s content and much more.',
   welcomeGuideSiteHelpCardDescWithAction: 'I can help you summarizing articles, expanding on a site\'s content and much more. Not sure where to start? Try this:',
@@ -78,5 +78,5 @@ provideStrings({
   welcomeGuideShatCardDesc: 'Ask me anything! We can talk about any topic you want. I\'m always learning and improving to provide better answers.',
   privacyTitle: 'Privacy agreement',
   contextToggleLabel: 'Use page context for response',
-  contextToggleTooltipInfo: 'Toggle on to ask about this page. It\'s content will be sent to Brave Leo along with your messages.'
+  contextToggleTooltipInfo: 'Toggle on to ask about this page. It\'s content will be sent to Hayek Leo along with your messages.'
 })

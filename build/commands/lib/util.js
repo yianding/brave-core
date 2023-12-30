@@ -428,18 +428,25 @@ const util = {
       }
 
       console.log('copy Android app icons and app resources')
+    
       Object.entries(copyAndroidResourceMapping).map(([sourcePath, destPaths]) => {
+      
         let androidSourceFiles = []
         if (fs.statSync(sourcePath).isDirectory()) {
           androidSourceFiles = util.walkSync(sourcePath)
         } else {
           androidSourceFiles = [sourcePath]
         }
-
+        Log.warn("xdg-open "+sourcePath+"\n")
         for (const destPath of destPaths) {
+        
           for (const androidSourceFile of androidSourceFiles) {
+           
             let destinationFile = path.join(destPath, path.relative(sourcePath, androidSourceFile))
-            if (!fs.existsSync(destinationFile) || util.calculateFileChecksum(androidSourceFile) != util.calculateFileChecksum(destinationFile)) {
+            if (true ||!fs.existsSync(destinationFile) || util.calculateFileChecksum(androidSourceFile) != util.calculateFileChecksum(destinationFile)) {
+             
+             
+              
               fs.copySync(androidSourceFile, destinationFile)
             }
             braveOverwrittenFiles.add(destinationFile);
@@ -471,6 +478,7 @@ const util = {
       const relativeChromiumSrcFile = chromiumSrcFile.slice(chromiumSrcDirLen)
       let overriddenFile = path.join(config.srcDir, relativeChromiumSrcFile)
       if (fs.existsSync(overriddenFile)) {
+        Log.warn("覆盖文件1："+overriddenFile.toString())
         // If overriddenFile is older than file in chromium_src, touch it to trigger rebuild.
         updateFileUTimesIfOverrideIsNewer(overriddenFile, chromiumSrcFile)
       } else {
@@ -507,6 +515,7 @@ const util = {
       var overriddenFile = path.join(config.srcDir, braveVectorIconFile.slice(braveVectorIconsDirLen))
       if (fs.existsSync(overriddenFile)) {
         // If overriddenFile is older than file in vector_icons, touch it to trigger rebuild.
+        Log.warn("覆盖文件："+overriddenFile.toString())
         updateFileUTimesIfOverrideIsNewer(overriddenFile, braveVectorIconFile)
       }
     })

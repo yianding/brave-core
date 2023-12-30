@@ -22,9 +22,10 @@ const start = (passthroughArgs, buildConfig = config.defaultBuildConfig, options
   if (options.disable_brave_extension) {
     braveArgs.push('--disable-brave-extension')
   }
-  if (options.disable_brave_rewards_extension) {
+  //Andy 修改，禁用brave 奖励
+  //if (options.disable_brave_rewards_extension) {
     braveArgs.push('--disable-brave-rewards-extension')
-  }
+  //}
   if (options.disable_pdfjs_extension) {
     braveArgs.push('--disable-pdfjs-extension')
   }

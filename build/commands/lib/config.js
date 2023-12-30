@@ -140,15 +140,15 @@ const Config = function () {
   this.braveServicesProductionDomain = getNPMConfig(['brave_services_production_domain']) || ''
   this.braveServicesStagingDomain = getNPMConfig(['brave_services_staging_domain']) || ''
   this.braveServicesDevDomain = getNPMConfig(['brave_services_dev_domain']) || ''
-  this.braveServicesKey = getNPMConfig(['brave_services_key']) || ''
+  this.braveServicesKey = getNPMConfig(['brave_services_key']) || 'qjVKcxtUybh8WpKNoQ7EbgbkJTMu7omjDHKk=VrPApb8PwJyPE9eqchxedTsMEWg'
   this.braveGoogleApiKey = getNPMConfig(['brave_google_api_key']) || 'AIzaSyAREPLACEWITHYOUROWNGOOGLEAPIKEY2Q'
   this.googleApiEndpoint = getNPMConfig(['brave_google_api_endpoint']) || 'https://www.googleapis.com/geolocation/v1/geolocate?key='
   this.googleDefaultClientId = getNPMConfig(['google_default_client_id']) || ''
   this.googleDefaultClientSecret = getNPMConfig(['google_default_client_secret']) || ''
   this.infuraProjectId = getNPMConfig(['brave_infura_project_id']) || ''
-  this.braveZeroExApiKey = getNPMConfig(['brave_zero_ex_api_key']) || ''
-  this.sardineClientId = getNPMConfig(['sardine_client_id']) || ''
-  this.sardineClientSecret = getNPMConfig(['sardine_client_secret']) || ''
+  this.braveZeroExApiKey = getNPMConfig(['brave_zero_ex_api_key']) || 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+  this.sardineClientId = getNPMConfig(['sardine_client_id']) || '7ca8433c-7e61-4e25-b76e-25aa2da68df1'
+  this.sardineClientSecret = getNPMConfig(['sardine_client_secret']) || '7ca8433c-7e61-4e25-b76e-25aa2da68df1'
   this.bitFlyerProductionClientId = getNPMConfig(['bitflyer_production_client_id']) || ''
   this.bitFlyerProductionClientSecret = getNPMConfig(['bitflyer_production_client_secret']) || ''
   this.bitFlyerProductionFeeAddress = getNPMConfig(['bitflyer_production_fee_address']) || ''
@@ -216,7 +216,7 @@ const Config = function () {
   // Make sure "src/" is a part of RBE "exec_root" to allow "src/" files as inputs.
   this.rbeExecRoot = this.rootDir
   this.realRewrapperDir = process.env.RBE_DIR || path.join(this.srcDir, 'buildtools', 'reclient')
-  this.braveStatsApiKey = getNPMConfig(['brave_stats_api_key']) || ''
+  this.braveStatsApiKey = getNPMConfig(['brave_stats_api_key']) || 'fe033168-0ff8-4af6-9a7f-95e2cbfc9f4f'
   this.braveStatsUpdaterUrl = getNPMConfig(['brave_stats_updater_url']) || ''
   this.ignore_compile_failure = false
   this.enable_hangout_services_extension = true
@@ -309,6 +309,7 @@ Config.prototype.getBraveLogoIconName = function () {
       iconName = "brave-icon-release-color.svg"
     }
   }
+  Log.warn("图标文件名："+iconName)
   return iconName
 }
 
@@ -320,6 +321,8 @@ Config.prototype.buildArgs = function () {
   const chrome_version_parts = this.chromeVersion.split('.')
 
   let args = {
+    //Andy 定义gn参数
+    treat_warnings_as_errors:false,
     sardine_client_id: this.sardineClientId,
     sardine_client_secret: this.sardineClientSecret,
     is_asan: this.isAsan(),
@@ -566,17 +569,17 @@ Config.prototype.buildArgs = function () {
     args.android_channel = this.channel
     if (!this.isReleaseBuild()) {
       args.android_channel = 'default'
-      args.chrome_public_manifest_package = 'com.brave.browser_default'
+      args.chrome_public_manifest_package = 'com.hayek.browser_default'
     } else if (this.channel === '') {
       args.android_channel = 'stable'
-      args.chrome_public_manifest_package = 'com.brave.browser'
+      args.chrome_public_manifest_package = 'com.hayek.browser'
     } else if (this.channel === 'beta') {
-      args.chrome_public_manifest_package = 'com.brave.browser_beta'
+      args.chrome_public_manifest_package = 'com.hayek.browser_beta'
     } else if (this.channel === 'dev') {
-      args.chrome_public_manifest_package = 'com.brave.browser_dev'
+      args.chrome_public_manifest_package = 'com.hayek.browser_dev'
     } else if (this.channel === 'nightly') {
       args.android_channel = 'canary'
-      args.chrome_public_manifest_package = 'com.brave.browser_nightly'
+      args.chrome_public_manifest_package = 'com.hayek.browser_nightly'
     }
     // exclude_unwind_tables is inherited form upstream and is false for any
     // Android build
