@@ -1,14 +1,16 @@
 Hayek browser is forked from brave browser
 # Download and compile Hayek Browser
+
 Hayek browser is forked from brave browser.
 system requier:Ubuntu 22.4 or above
 node version: 16.17.1
+```bash
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 export http_proxy=
 export https_proxy=
 git config --global core.compression 0 
-//set git no  compression,remove all proxy setting.
+#set git no  compression,remove all proxy setting.
 
 mkdir hayekbrowser/src/brave
 cd  hayekbrowser/src
@@ -16,13 +18,13 @@ git clone https://github.com/yianding/brave-core.git ./brave
 cd brave 
 npm install
 npm run init -- --target_os=android --target_arch=arm
-waiting for sync chromium project.very long time depends on your internet speed.
+#waiting for sync chromium project.very long time depends on your internet speed.
 
 npm run build gen_gradle
 
-//very long time depends on your CPU and memory.
+#very long time depends on your CPU and memory.
 
-
+```
 
 
 
